@@ -1,0 +1,167 @@
+{% extends "layout-site.html.twig" %}
+
+
+{% block body %}
+
+	{% include "includs/navbar.html.twig" %}
+
+	<main>
+		{# Header de la pade #}
+		<section id="hero" class="hero">
+			<div class="container position-relative">
+				<div class="row gy-5" data-aos="fade-in">
+					<div class="col-lg-6 order-2 order-lg-1 d-flex flex-column justify-content-center text-center text-lg-start">
+						<h2>Welcome to
+							<span>Impact</span>
+						</h2>
+						<p>Sed autem laudantium dolores. Voluptatem itaque ea consequatur eveniet. Eum quas beatae cumque eum quaerat.
+						</p>
+						<div class="d-flex justify-content-center justify-content-lg-start">
+							<a href="#about" class="btn-get-started">Get Started</a>
+							<a href="https://www.youtube.com/watch?v=LXb3EKWsInQ" class="glightbox btn-watch-video d-flex align-items-center">
+								<i class="bi bi-play-circle"></i>
+								<span>Watch
+																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																								                Video</span>
+							</a>
+						</div>
+					</div>
+					<div class="col-lg-6 order-1 order-lg-2 card">
+						<ul class="nav nav-tabs d-flex justify-content-between" id="myTab" role="tablist">
+							<li class="nav-item" role="presentation">
+								<button class="nav-link active" id="home-tab" data-bs-toggle="tab" data-bs-target="#home" type="button" role="tab" aria-controls="home" aria-selected="true">Home</button>
+							</li>
+							<li class="nav-item" role="presentation">
+								<button class="nav-link" id="profile-tab" data-bs-toggle="tab" data-bs-target="#profile" type="button" role="tab" aria-controls="profile" aria-selected="false">Profile</button>
+							</li>
+						</ul>
+						<div class="tab-content" id="myTabContent">
+							<div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">
+								<div class="error-message mt-3 pr-5">
+									{% for error in errors %}
+										<div class="text-danger mt-2">{{error}}</div>
+									{% endfor %}
+								</div>
+								<section id="contact" class="form-section">
+									<div class="container" data-aos="fade-up">
+										<div
+											class="gx-lg-0 gy-4">
+											<!-- Login form -->
+
+											<form action="/login" method="POST" role="form" class="form">
+												<div class="form-group">
+													<label for="login" class="label-form">Identifiant</label>
+													<input type="text" name="login" class="form-control" id="login" placeholder="Identifiant" required>
+												</div>
+												<div class="form-group mt-3">
+													<label for="password" class="label-form mt-1">Mot de passe</label>
+													<input type="text" class="form-control" name="password" id="password" placeholder="Mot de passe" required>
+												</div>
+												<div class="my-3">
+													<div class="loading">Loading</div>
+
+												</div>
+												<div class="text-right">
+													<button type="submit">Send Message</button>
+												</div>
+											</form>
+
+										</div>
+
+									</div>
+								</section>
+								<!-- End Contact Section -->
+							</div>
+							<div class="tab-pane fade form-section" id="profile" role="tabpanel" aria-labelledby="profile-tab">
+								<form action="/register" method="POST" class="form">
+									<div class="modal-body">
+										<div class="form-group">
+											<label for="username" class="label-form">Nom</label>
+											<input type="text" name="username" class="form-control" id="username" placeholder="Nom" required>
+										</div>
+										<div class="form-group">
+											<label for="identifiant" class="label-form">Identifiant (différent de votre nom)</label>
+											<input type="text" name="identifiant" class="form-control" id="identifiant" placeholder="Identifiant" required>
+										</div>
+										<div class="form-group mt-3">
+											<label class="label-form mt-1">Mot de passe (8 caractères minimum, Majuscule, Minuscule & Chiffre)</label>
+											<input type="text" class="form-control" name="password" id="password" placeholder="Mot de passe" required>
+										</div>
+										<div class="form-group mt-3">
+											<label class="label-form mt-1" for="password_confirm">Confirmation de mot de passe</label>
+											<input type="password" class="form-control" name="password_confirm" id="password_confirm" placeholder="Mot de passe" required>
+										</div>
+									</div>
+									<div class="modal-footer">
+										<button type="submit" class="btn btn-primary">Valider</button>
+									</div>
+								</form>
+
+							</div>
+						</div>
+
+						{# <img src="/public/site-assets/img/hero-img.svg" class="img-fluid" alt="" data-aos="zoom-out" data-aos-delay="100"> #}
+					</div>
+				</div>
+			</div>
+
+			<div class="icon-boxes position-relative">
+				<div class="container position-relative">
+					<div class="row gy-4 mt-5">
+
+						<div class="col-xl-3 col-md-6" data-aos="fade-up" data-aos-delay="100">
+							<div class="icon-box">
+								<div class="icon">
+									<i class="bi bi-easel"></i>
+								</div>
+								<h4 class="title">
+									<a href="" class="stretched-link">Lorem Ipsum</a>
+								</h4>
+							</div>
+						</div>
+						<!--End Icon Box -->
+
+						<div class="col-xl-3 col-md-6" data-aos="fade-up" data-aos-delay="200">
+							<div class="icon-box">
+								<div class="icon">
+									<i class="bi bi-gem"></i>
+								</div>
+								<h4 class="title">
+									<a href="" class="stretched-link">Sed ut perspiciatis</a>
+								</h4>
+							</div>
+						</div>
+						<!--End Icon Box -->
+
+						<div class="col-xl-3 col-md-6" data-aos="fade-up" data-aos-delay="300">
+							<div class="icon-box">
+								<div class="icon">
+									<i class="bi bi-geo-alt"></i>
+								</div>
+								<h4 class="title">
+									<a href="" class="stretched-link">Magni Dolores</a>
+								</h4>
+							</div>
+						</div>
+						<!--End Icon Box -->
+
+						<div class="col-xl-3 col-md-6" data-aos="fade-up" data-aos-delay="500">
+							<div class="icon-box">
+								<div class="icon">
+									<i class="bi bi-command"></i>
+								</div>
+								<h4 class="title">
+									<a href="" class="stretched-link">Nemo Enim</a>
+								</h4>
+							</div>
+						</div>
+						<!--End Icon Box -->
+
+					</div>
+				</div>
+			</div>
+
+		</div>
+	</section>
+</main>
+<!-- End #main -->
+{% include "includs/footer.html.twig" %}{% endblock body %}

@@ -1,0 +1,19 @@
+{
+    "name": "zaenma/portail",
+    "autoload": {
+        "psr-4": {
+            "src\\": "src/",
+            "Router\\": "routes/",
+            "config\\": "config"
+        }
+    },
+    "authors": [
+        {
+            "name": "Zaenma",
+            "email": "zaenma.halidisalim@gmail.com"
+        }
+    ],
+    "require": {
+        "twig/twig": "^3.4"
+    }
+}
